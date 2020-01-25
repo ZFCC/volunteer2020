@@ -13,7 +13,6 @@
 		<groupId>com.volunteer</groupId>
 		<artifactId>volunteer</artifactId>
 		<version>1.0.0</version>
-		<relativePath/>
 	</parent>
 
 	<!-- 依赖包管理 -->
