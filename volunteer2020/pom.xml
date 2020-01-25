@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.volunteer</groupId>
+  <artifactId>volunteer</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>volunteer</name>
+  <url>http://dev.wsas.cn:81/</url>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.0.5.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <modules>
+    <module>volunteer-base</module>
+    <module>volunteer-web</module>
+  </modules>
+
+  <!-- 所有版本的jar包版本在此处维护，不要在单独模块中添加 -->
+  <properties>
+    <project.name>volunteer</project.name>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <volunteer-base.version>1.0.0</volunteer-base.version>
+    <aliyun.java.sdk.core.version>4.0.6</aliyun.java.sdk.core.version>
+    <aliyun.java.sdk.dysmsapi.version>1.1.0</aliyun.java.sdk.dysmsapi.version>
+    <org.jdom.version>2.0.2</org.jdom.version>
+  </properties>
+
+  <!-- 依赖包管理 -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.volunteer</groupId>
+        <artifactId>volunteer-base</artifactId>
+        <version>${volunteer-base.version}</version>
+      </dependency>
+    </dependencies>
+
+  </dependencyManagement>
+
+  <!-- build插件 -->
+  <build>
+    <finalName>${project.name}</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+          <include>**/*.txt</include>
+          <include>**/*.vm</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+        </includes>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jdeps-plugin</artifactId>
+          <version>3.0.0</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>jdkinternals</goal>
+                <goal>test-jdkinternals</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </repository>
+  </repositories>
+
+  <developers>
+    <developer>
+      <name>Volunteer</name>
+      <id>Volunteer</id>
+      <email>874718507@qq.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+8</timezone>
+    </developer>
+  </developers>
+</project>
