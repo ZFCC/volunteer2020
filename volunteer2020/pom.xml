@@ -32,7 +32,7 @@
     <volunteer-base.version>1.0.0</volunteer-base.version>
     <commons.lang3.version>3.0</commons.lang3.version>
     <commons.lang.version>2.0</commons.lang.version>
-    <commons.collections.version>3.2</commons.collections.version>
+    <commons.collections.version>3.2.2</commons.collections.version>
     <commons.fileupload.version>1.3.1</commons.fileupload.version>
     <commons.io.version>2.5</commons.io.version>
     <poi.version>3.12</poi.version>
